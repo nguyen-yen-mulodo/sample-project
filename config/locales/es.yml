@@ -1,0 +1,8 @@
+
+es: 
+  hello_flash: "Hello Es!"
+  home: halo  
+  error: 
+  users:
+    show:
+      title: Titulo

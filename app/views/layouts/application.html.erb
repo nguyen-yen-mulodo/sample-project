@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>home</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	  
+<div id="templatemo_body_wrapper">
+	<div id="templatemo_wrapper">
+		    <div id="templatemo_header"></div>
+			<div id="site_title">
+				<h1>
+					<a href="http://www.templatemo.com">Free CSS Templates</a>
+				</h1>
+			</div>
+
+			<!-- begin templatemo_menu -->
+			<div id="templatemo_menu">
+				<ul>
+					<% if session[:user_id] %>
+	                <li>
+	               		<a href="#">   
+			     	    	Welcome <%=  session[:user_name] %>
+			     	     </a>
+	                </li>
+	                <% end %>
+	                <li><%= link_to "Home",    users_path %></li>
+	                <% if session[:user_id] %>
+	                <li>
+	               	    <%= link_to "New User",  new_user_path %>
+	                </li>
+	                <% end %>         
+	            <% if session[:user_id] %>
+			     	<li> <%= link_to 'Logout', sessions_destroy_path %></li>
+			  	 <% else %>
+			      	<li><%= link_to "Sign in", sessions_new_path %></li>
+			     <% end %>
+                </ul>    	
+            </div> <!-- end of templatemo_menu -->
+            
+            <!-- begin templatemo_main -->
+			<div id="templatemo_main">
+				<div id="home" class="content_top"></div>
+		   	    <div class="content_box">
+				    <%= yield %>
+				   
+	             </div><!-- end content_box -->
+			</div><!-- end of templatemo_main -->
+			
+			<!-- begin templatemo_footer -->
+			<div id="templatemo_footer">
+				Copyright © 2013 Design by Nguyen Thi Hai Yen<br /> 
+	        
+	        <div class="cleaner"></div>
+	        
+			</div><!-- end of templatemo_footer -->
+	</div><!-- end of body templatemo_wrapper -->
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+			

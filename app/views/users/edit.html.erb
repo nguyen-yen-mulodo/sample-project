@@ -1,0 +1,27 @@
+
+
+<div class="content_title content_ctf">
+	<h2>Edit User</h2>
+</div>
+<div class="content">
+	
+		<%= form_for(@users)  do |f|%>
+			<p>
+				Your Name : </br>
+				<%= f.text_field :name %>
+			</p>
+			
+			<p>
+				Email :</br>
+				<%= f.text_field :email %>
+			</p>
+			
+			<p>
+				<%= f.submit 'Save',class: "btn" %>
+			</p>
+		<% end %>
+	<br />
+	<%= link_to 'back', users_path %>
+    <div class="cleaner"></div>
+</div> <!-- end content -->
+<div class="content_bottom content_cbf"></div>

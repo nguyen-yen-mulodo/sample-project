@@ -1,0 +1,25 @@
+<div class="content_title content_ctf">
+	<h2>Show User</h2>
+</div>
+<div class="content" >
+	
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Email</th>
+	  </tr>
+	
+	  <tr>
+	    <td><%= @users.name %></td>
+	    <td><%= @users.email %></td>
+	  </tr>
+	
+	
+	</table>
+	
+	<br />
+	
+	<%= link_to 'back', users_path %>
+    <div class="cleaner"></div>
+</div> <!-- end content -->
+<div class="content_bottom content_cbf"></div>

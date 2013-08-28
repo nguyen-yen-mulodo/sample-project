@@ -1,0 +1,28 @@
+		       <div class="content_title content_ctf">
+	           <h2>New User</h2>
+	        	</div>
+	            <div class="content">
+
+					<% @page_title = "UserAuth | Signup" %>
+					<div>
+						<% if @error != nil%>
+					        <% @error.each do |key,val| %>
+					            <p class="text-error"><%= key %> : <%= val %></p>
+					        <% end %>
+					    <% end %>
+					</div>
+					<hr />
+					<div class="Sign_Form">
+						<h1>Sign Up</h1>
+						<%= form_for(:user, :url => {:controller => 'users', :action => 'new'}) do |f| %>
+							<p> Username:</br> <%= f.text_field :name %> </p>
+							<p> Email:</br> <%= f.text_field :email%> </p>
+							<p> Password:</br> <%= f.password_field :password%></p>
+							<p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+							<!-- <%= f.text_field( :user_id, {:value=>1}) %> -->
+							<%= f.submit :Signup ,class: "btn"%>
+						<% end %>
+					</div>
+	                <div class="cleaner"></div>
+		         </div> <!-- end content -->
+		         <div class="content_bottom content_cbf"></div>
